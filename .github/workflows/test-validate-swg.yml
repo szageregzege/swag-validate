@@ -23,6 +23,6 @@ jobs:
       - name: checkout branch
         uses: actions/checkout@v3
       - name: Install Swagger Validator
-        run: npm install -g swagger-cli
+        run: npm install -g openapi-enforcer-cli
       - name: Validate Swagger
-        run: swagger-cli validate swg.openapi.yaml
+        run: openapi-enforcer validate swg.openapi.yaml
