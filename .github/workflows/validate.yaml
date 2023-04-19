@@ -1,21 +1,20 @@
-name: Validate Swagger YAML
+name: Swagger Validation
 
 on:
   push:
-    paths:
-      - '**/*.yaml'
-      - '**/*.yml'
+    branches: [ master ]
 
 jobs:
-  validate_swagger_yaml:
+  validate-swagger:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: npm install -g swagger-cli
-
-    - name: Validate Swagger YAML
-      run: swagger-cli validate /swg.openapi.yaml
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Swagger Validator
+        run: npm install -g swagger-cli
+      - name: Validate Swagger
+        run: |
+          for file in $(find . -name "*.yaml" -type f -not -path "./node_modules/*")
+          do
+            swagger-cli validate $file
+          done
