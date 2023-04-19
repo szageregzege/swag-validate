@@ -780,7 +780,7 @@ components:
           schema:
             $ref: '#/components/schemas/Pet'
     UserArray:
-      description: test1
+      description: test12
       content:
         application/json:
           schema:
