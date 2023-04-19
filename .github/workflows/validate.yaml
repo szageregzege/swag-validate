@@ -1,0 +1,21 @@
+name: Validate Swagger YAML
+
+on:
+  push:
+    paths:
+      - '**/*.yaml'
+      - '**/*.yml'
+
+jobs:
+  validate_swagger_yaml:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: npm install -g swagger-cli
+
+    - name: Validate Swagger YAML
+      run: swagger-cli validate path/to/swagger.yaml
