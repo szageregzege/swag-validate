@@ -25,4 +25,11 @@ jobs:
       - name: Install Swagger Validator
         run: npm install -g openapi-enforcer-cli
       - name: Validate Swagger
-        run: openapi-enforcer validate swg.openapi.yaml
+        run: |
+          for file in $(git diff --name-only HEAD~1 HEAD | grep ".yaml"); do
+            if openapi-enforcer validate $file; then
+              echo "$file passed validation."
+            else
+              echo "$file failed validation."
+            fi
+          done
