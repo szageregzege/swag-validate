@@ -13,8 +13,4 @@ jobs:
       - name: Install Swagger Validator
         run: npm install -g swagger-cli
       - name: Validate Swagger
-        run: |
-          for file in $(find . -name "*.yaml" -type f -not -path "./node_modules/*")
-          do
-            swagger-cli validate $file
-          done
+        run: swagger-cli validate swg.openapi.yaml
