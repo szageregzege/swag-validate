@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'brew update'
-                sh 'brew install enchant'
-                sh 'brew install libmagic'
-                sh 'brew ls --versions enchant'
+                sh '$brew update'
+                sh '$brew install enchant'
+                sh '$brew install libmagic'
+                sh '$brew ls --versions enchant'
             }
         }
         stage('Build and Test') {
