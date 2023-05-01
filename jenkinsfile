@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+        
+        PATH = "PATH=$PATH:/usr/local/bin"
+    }
+    
     stages {
         stage('Install Dependencies') {
             steps {
