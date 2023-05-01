@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'macOS'
-    }
+    agent any
     stages {
         stage('Install Dependencies') {
             steps {
