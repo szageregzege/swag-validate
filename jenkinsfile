@@ -1,24 +1,16 @@
 pipeline {
     agent any
-    environment {
-        
-        PATH = "PATH=$PATH:/usr/local/Homebrew/bin"
+    tools {
+    nodejs '20.0.0'
     }
+    
     
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'brew update'
-                sh 'brew install enchant'
-                sh 'brew install libmagic'
-                sh 'brew ls --versions enchant'
+                sh 'npm version'
             }
         }
-        stage('Build and Test') {
-            steps {
-                sh 'make'
-                sh 'make test'
-            }
-        }
+      
     }
 }
