@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         
-        PATH = "PATH=$PATH:/usr/local/bin"
+        PATH = "PATH=$PATH:/usr/local/Homebrew"
     }
     
     stages {
