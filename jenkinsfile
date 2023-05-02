@@ -1,14 +1,13 @@
 pipeline {
     agent any
     tools {
-    nodejs '20.0.0'
+        nodejs '20.0.0'
     }
-    
-    
+   
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'npm version'
+                sh 'sh "pip install -r requirements.txt"'
             }
         }
       
