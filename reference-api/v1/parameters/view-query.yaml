@@ -1,0 +1,14 @@
+description: |
+  Describe the parameter here, `summary` by default.
+in: query
+required: false
+name: view
+schema:
+  # Provide any fixed 'default' value if required:false
+  default: summary
+  type: string
+  # Specify a typical 'example' value
+  example: detailed
+  enum:
+    - summary
+    - detailed

@@ -1,0 +1,109 @@
+# Sample demonstrating an API that provides dynamic access to its data
+# schemas.
+openapi: 3.0.0
+x-akamai:
+  auth-type: EDGE_GRID
+info:
+  title: Schemas
+  version: v1
+servers:
+  - url: https://{hostname}/commerce/v1
+paths:
+  /schemas:
+    get:
+      operationId: get-schemas
+      summary: List schemas
+      tags:
+        - Schemas
+      description: |
+        This operation returns a list of schemas, optionally paginated or filtered by type of schema or date when first made available.
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/schemas.json
+              schema:
+                $ref: schemas/schemas.yaml
+          description: |
+            The response shows the collection of `schemas`.
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+  /schemas/{schemaFile}:
+    parameters:
+      - $ref: parameters/schemaFile-path.yaml
+    get:
+      operationId: get-schema
+      summary: Get a schema
+      tags:
+        - Schemas
+      description: |
+        This operation retrieves the details of a schema.
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/schema.json
+              schema:
+                $ref: schemas/schema.yaml
+          description: |
+            The response provides the schema.
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml

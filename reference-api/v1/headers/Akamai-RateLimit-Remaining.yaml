@@ -1,0 +1,7 @@
+# This is an example of resource headers used to signal rate-limit violtions with a 429 code.
+# See Rate limiting in https://pulsar.akamai.com/services/apis/api-design-checklist/#rate-and-resource-limiting
+description: |
+  Describe this header.
+schema:
+  type: integer
+  example: 400

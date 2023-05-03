@@ -1,0 +1,7 @@
+# Demonstrates a $ref-linked definition for common auditing data member
+type: string
+# minLength:0 if the string can be empty (""); otherwise 1 or more
+minLength: 1
+description: |
+  Summarize this object's scope & function.
+readOnly: true

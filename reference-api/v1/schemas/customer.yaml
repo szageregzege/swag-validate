@@ -1,0 +1,62 @@
+type: object
+# This specifies: only the defined set of 'properties' are valid:
+additionalProperties: false
+description: |
+  Summarize this object's scope & function.
+required:
+  - customerId
+  - customerName
+  - customerStatus
+  - customerType
+  - customerDescription
+properties:
+  customerId:
+    type: string
+    readOnly: true
+    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    minLength: 1
+    description: |
+      Describe this data member.
+  customerName:
+    type: string
+    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    minLength: 1
+    description: |
+      Describe this data member.
+  customerType:
+    type: string
+    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    minLength: 1
+    description: |
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from techdocs.akamai.com.
+    # Link a common set of enum values to ensure consistency across
+    # all schemas
+    enum:
+      $ref: enum-customerType.yaml
+  customerStatus:
+    type: string
+    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    minLength: 1
+    readOnly: true
+    description: |
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from techdocs.akamai.com.
+    # Link a common set of enum values to ensure consistency across
+    # all schemas
+    enum:
+      $ref: enum-customerStatus.yaml
+  customerDescription:
+    type: string
+    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    minLength: 1
+    description: |
+      Describe this data member.
+  modifiedTime:
+    $ref: modifiedTime.yaml
+  modifiedBy:
+    $ref: modifiedBy.yaml
+  createdTime:
+    $ref: createdTime.yaml
+  createdBy:
+    $ref: createdBy.yaml
+  links:
+    $ref: links.yaml

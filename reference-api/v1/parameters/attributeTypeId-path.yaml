@@ -1,0 +1,7 @@
+description: |
+  Uniquely identifies a customer.
+in: path
+name: attributeTypeId
+required: true
+schema:
+  type: integer

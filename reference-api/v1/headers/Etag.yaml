@@ -1,0 +1,7 @@
+# This is an example of concurrency control headers used to verify the version of the resource model.
+# See Concurrency control in https://pulsar.akamai.com/services/apis/api-design-checklist/#concurrency-control
+description: |
+  Describe this header.
+schema:
+  type: string
+  example: a9dfe78cf93090516bde891d009eaf57

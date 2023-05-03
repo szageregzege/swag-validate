@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "description": "...actual non-placeholder data that represents actual, non-'test' usage...",
+  "properties": {
+    "productId": {
+      "type": "string",
+      "description": "...actual non-placeholder data that represents actual, non-'test' usage..."
+    },
+    "productName": {
+      "type": "string",
+      "description": "...actual non-placeholder data that represents actual, non-'test' usage..."
+    },
+    "productType": {
+      "type": "string",
+      "description": "...actual non-placeholder data that represents actual, non-'test' usage...",
+      "enum": [
+        "STANDARD",
+        "SPECIAL",
+        "ONLINE"
+      ]
+    },
+    "productStatus": {
+      "type": "string",
+      "description": "...actual non-placeholder data that represents actual, non-'test' usage...",
+      "enum": [
+        "PENDING",
+        "GA",
+        "BETA",
+        "DEPRECATED"
+      ]
+    },
+    "productDescription": {
+      "type": "string",
+      "description": "...actual non-placeholder data that represents actual, non-'test' usage..."
+    },
+    "modifiedTime": {
+      "type": "string"
+    },
+    "modifiedBy": {
+      "type": "string"
+    },
+    "createdTime": {
+      "type": "string"
+    },
+    "createdBy": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "productId",
+    "productName",
+    "productType",
+    "productStatus",
+    "productDescription"
+  ]
+}

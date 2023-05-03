@@ -1,0 +1,11 @@
+name: productType
+description: |
+  Describe the parameter here.
+in: query
+required: false
+schema:
+  type: string
+  # Specify a typical 'example' value
+  example: ONLINE
+  enum:
+    $ref: ../schemas/enum-productType.yaml

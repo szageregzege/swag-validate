@@ -1,0 +1,7 @@
+description: |
+  Uniquely identifies a node.
+in: path
+name: nodeId
+required: true
+schema:
+  type: integer

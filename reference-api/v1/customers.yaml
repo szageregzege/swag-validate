@@ -1,0 +1,544 @@
+openapi: 3.0.0
+x-akamai:
+  auth-type: EDGE_GRID
+info:
+  title: Customers
+  version: v1
+servers:
+  - url: https://{hostname}/commerce/v1
+paths:
+  /customers:
+    get:
+      operationId: get-customers
+      summary: List customers
+      tags:
+        - Customers
+      description: |
+        Describe what the operation does here.
+      parameters:
+        - $ref: parameters/view-query.yaml
+        - $ref: parameters/filter-query.yaml
+        - $ref: parameters/sortBy-query.yaml
+        - $ref: parameters/page-query.yaml
+        - $ref: parameters/pageSize-query.yaml
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/customers.json
+              schema:
+                $ref: schemas/customers.yaml
+          description: |
+            The response provides the collection of `customers`.
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+    post:
+      operationId: post-customers
+      summary: Create a new customer
+      tags:
+        - Customers
+      description: |
+        Describe what the operation does here.
+      parameters:
+        - $ref: parameters/view-query.yaml
+        - $ref: parameters/filter-query.yaml
+        - $ref: parameters/sortBy-query.yaml
+        - $ref: parameters/page-query.yaml
+        - $ref: parameters/pageSize-query.yaml
+      requestBody:
+        content:
+          # Each possible content type, usually just application/json
+          application/json:
+            example:
+              $ref: examples/customer.json
+            schema:
+              $ref: schemas/customer.yaml
+        required: true
+      responses:
+        201:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+            Location:
+              $ref: headers/Location.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/customer.json
+              schema:
+                $ref: schemas/customer.yaml
+          description: |
+            The response provides data for the customer.
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+  /customers/{customerId}:
+    parameters:
+      - $ref: parameters/customerId-path.yaml
+    delete:
+      operationId: delete-customer
+      summary: Remove a customer
+      tags:
+        - Customers
+      description: |
+        Describe what the operation does here.
+      responses:
+        204:
+          description: |
+            Customer successfully deleted.
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+    get:
+      operationId: get-customer
+      summary: Get a customer
+      tags:
+        - Customers
+      description: |
+        Describe what the operation does here.
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/customer.json
+              schema:
+                $ref: schemas/customer.yaml
+          description: |
+            The response provides data for the customer..
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+    put:
+      operationId: put-customer
+      summary: Update a customer
+      tags:
+        - Customers
+      description: |
+        Describe what the operation does here.
+      requestBody:
+        content:
+          # Each possible content type, usually just application/json
+          application/json:
+            example:
+              $ref: examples/customer.json
+            schema:
+              $ref: schemas/customer.yaml
+        required: true
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/customer.json
+              schema:
+                $ref: schemas/customer.yaml
+          description: |
+            The response provides data for the customer..
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+  /customers/{customerId}/orders:
+    parameters:
+      - $ref: parameters/customerId-path.yaml
+    get:
+      operationId: get-orders
+      summary: List orders
+      tags:
+        - Customer orders
+      description: |
+        Describe what the operation does here.
+      parameters:
+        - $ref: parameters/view-query.yaml
+        - $ref: parameters/filter-query.yaml
+        - $ref: parameters/sortBy-query.yaml
+        - $ref: parameters/page-query.yaml
+        - $ref: parameters/pageSize-query.yaml
+        - $ref: parameters/start-query.yaml
+        - $ref: parameters/end-query.yaml
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+            Link:
+              $ref: headers/Link.yaml
+          description: |
+            The response provides data for the order.
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/order.json
+              schema:
+                $ref: schemas/order.yaml
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+    post:
+      operationId: post-orders
+      summary: Create a new order
+      tags:
+        - Customer orders
+      description: |
+        Describe what the operation does here.
+      parameters:
+        - $ref: parameters/view-query.yaml
+        - $ref: parameters/filter-query.yaml
+        - $ref: parameters/sortBy-query.yaml
+        - $ref: parameters/page-query.yaml
+        - $ref: parameters/pageSize-query.yaml
+      requestBody:
+        content:
+          # Each possible content type, usually just application/json
+          application/json:
+            example:
+              $ref: examples/order.json
+            schema:
+              $ref: schemas/order.yaml
+        required: true
+      responses:
+        201:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+            Location:
+              $ref: headers/Location.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/order.json
+              schema:
+                $ref: schemas/order.yaml
+          description: |
+            The response provides data for the order.
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+  /customers/{customerId}/orders/{orderId}:
+    parameters:
+      - $ref: parameters/customerId-path.yaml
+      - $ref: parameters/orderId-path.yaml
+    delete:
+      operationId: delete-order
+      summary: Remove an order
+      tags:
+        - Customer orders
+      description: |
+        Describe what the operation does here.
+      responses:
+        204:
+          description: |
+            Order successfully deleted.
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+    get:
+      operationId: get-order
+      summary: Get an order
+      tags:
+        - Customer orders
+      description: |
+        Describe what the operation does here.
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/order.json
+              schema:
+                $ref: schemas/order.yaml
+          description: |
+            The response provides data for the order.
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml
+    put:
+      operationId: put-order
+      summary: Update an order
+      tags:
+        - Customer orders
+      description: |
+        Describe what the operation does here.
+      requestBody:
+        content:
+          # Each possible content type, usually just application/json
+          application/json:
+            example:
+              $ref: examples/order.json
+            schema:
+              $ref: schemas/order.yaml
+        required: true
+      responses:
+        200:
+          # Full set of the API's custom response headers
+          # (excluding implicit Accept/Content-Type)
+          headers:
+            Akamai-RateLimit-Limit:
+              $ref: headers/Akamai-RateLimit-Limit.yaml
+            Akamai-RateLimit-Remaining:
+              $ref: headers/Akamai-RateLimit-Remaining.yaml
+            Akamai-RateLimit-Next:
+              $ref: headers/Akamai-RateLimit-Next.yaml
+          content:
+            # Each possible content type, usually just application/json
+            application/json:
+              example:
+                $ref: examples/order.json
+              schema:
+                $ref: schemas/order.yaml
+          description: |
+            The response provides data for the order.
+        # Spec the full range of possible error response codes
+        # in the 4xx/5xx range, including API platform-level
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          $ref: errors/404.yaml
+        405:
+          $ref: errors/405.yaml
+        409:
+          $ref: errors/409.yaml
+        415:
+          $ref: errors/415.yaml
+        429:
+          $ref: errors/429.yaml
+        503:
+          $ref: errors/503.yaml

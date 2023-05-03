@@ -1,0 +1,11 @@
+# Demonstrates a mechanism to filter data to a time range.
+# See Filter time range in https://pulsar.akamai.com/services/apis/api-design-checklist/#configurable-collections
+name: start
+in: query
+description: |
+  Describe the parameter here.
+required: false
+schema:
+  type: string
+  # Specify a typical 'example' value
+  example: "2021-03-05T00:00Z"

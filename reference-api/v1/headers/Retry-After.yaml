@@ -1,0 +1,7 @@
+# This is an example of headers used in asynchronous polling mechanism to provide an estimate for when the status value will update to allow full functionality.
+# See Asynchronicity in https://pulsar.akamai.com/services/apis/api-design-checklist/#asynchronicity
+description: |
+  Describe this header.
+schema:
+  type: integer
+  example: 3

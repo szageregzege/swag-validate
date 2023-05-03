@@ -1,0 +1,21 @@
+type: object
+# This specifies: only the defined set of 'properties' are valid:
+additionalProperties: false
+description: |
+  Summarize this object's scope & function.
+required:
+  - customers
+properties:
+  customers:
+    type: array
+    # While seemingly implicit, specify if the array doesn't repeat items
+    uniqueItems: true
+    # minItems:0 if array can be empty; otherwise 1
+    minItems: 0
+    description: |
+      List of customers.
+    items:
+      $ref: customer.yaml
+  links:
+    $ref: links.yaml
+    readOnly: true

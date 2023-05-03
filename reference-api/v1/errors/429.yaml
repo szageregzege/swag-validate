@@ -1,0 +1,18 @@
+# Sample error response spec. Assign for each possible error code to
+# each operation. Link a common error schema.  Any `example` only
+# needs to demonstate a single instance of the error.
+description: |
+  [Too many requests](ref:429).
+content:
+  application/problem+json:
+    example:
+      $ref: ../examples/429.json
+    schema:
+      $ref: ../schemas/problem.yaml
+headers:
+  Akamai-RateLimit-Limit:
+    $ref: ../headers/Akamai-RateLimit-Limit.yaml
+  Akamai-RateLimit-Remaining:
+    $ref: ../headers/Akamai-RateLimit-Remaining.yaml
+  Akamai-RateLimit-Next:
+    $ref: ../headers/Akamai-RateLimit-Next.yaml

@@ -1,0 +1,18 @@
+# Identifies the project to publish in, corresponding to:
+# https://techdocs.akamai.com/{id}/reference
+id: akamai-reference
+
+# Match the title of that page, used for Postman distributions:
+title: Akamai Reference API
+
+service-type: OPERATIONS
+
+service-summary: |
+  This provides sample OpenAPI source for a hypothetical API.
+
+version: v1
+
+# When these OpenAPI files are OK to go public on the 'akamai-apis' GitHub
+exclude:
+  exclude-from-github: true
+  exclude-reason: PRE_RELEASE

@@ -1,0 +1,7 @@
+# This is an example of a hypermedia headers used to access schemas to validate data before using it to make a request.
+# See Schema discovery in https://pulsar.akamai.com/services/apis/api-design-checklist/#initial-development-criteria
+description: |
+  Describe this header.
+schema:
+  type: string
+  example: '</commerce/v1/schemas/order.yaml; rel="describedby">'

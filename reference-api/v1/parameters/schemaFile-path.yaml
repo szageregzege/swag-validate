@@ -1,0 +1,9 @@
+name: schemaFile
+description: |
+  Describe the parameter here.
+in: path
+required: true
+schema:
+  type: string
+  # Specify a typical 'example' value
+  example: customer.json

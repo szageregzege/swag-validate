@@ -1,0 +1,4 @@
+description: |
+  Describe this header.
+schema:
+  type: string

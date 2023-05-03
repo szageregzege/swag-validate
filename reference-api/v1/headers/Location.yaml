@@ -1,0 +1,7 @@
+# This is an example of a Location header used to provide a navigable link to the newly created resource.
+# See Post new in https://pulsar.akamai.com/services/apis/api-design-checklist/#post-new
+description: |
+  Describe this header.
+schema:
+  type: string
+  example: /products/9e075013

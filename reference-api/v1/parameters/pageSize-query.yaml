@@ -1,0 +1,16 @@
+# Demonstrates a mechanism to paginate results and include a maximum number of results in each request.
+# See Paginated results in https://pulsar.akamai.com/services/apis/api-design-checklist/#configurable-collections
+description: |
+  Describe the parameter here, `100` by default.
+in: query
+required: false
+name: pageSize
+schema:
+  # Provide any fixed 'default' value if required:false
+  default: 100
+  maximum: 1000
+  # Set a minimum to e.g. exclude negative numbers
+  minimum: 1
+  type: integer
+  # Specify a typical 'example' value
+  example: 50
