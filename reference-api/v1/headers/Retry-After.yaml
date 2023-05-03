@@ -1,7 +1,0 @@
-
-#asynchronicity
-description: |
-  Describe this header.
-schema:
-  type: integer
-  example: 3

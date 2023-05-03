@@ -1,7 +1,0 @@
-
-#initial-development-criteria
-description: |
-  Describe this header.
-schema:
-  type: string
-  example: '</commerce/v1/schemas/order.yaml; rel="describedby">'

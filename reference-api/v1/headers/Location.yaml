@@ -1,7 +1,0 @@
-
-#post-new
-description: |
-  Describe this header.
-schema:
-  type: string
-  example: /products/9e075013

@@ -1,7 +1,7 @@
 
-id: reference-api
+id: akamai-reference
 
-title: API
+title: Akamai Reference API
 
 service-type: OPERATIONS
 
@@ -10,4 +10,6 @@ service-summary: |
 
 version: v1
 
-
+exclude:
+  exclude-from-github: true
+  exclude-reason: PRE_RELEASE
