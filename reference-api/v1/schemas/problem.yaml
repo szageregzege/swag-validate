@@ -1,5 +1,5 @@
 type: object
-# This specifies: only the defined set of 'properties' are valid:
+
 additionalProperties: false
 description: |
   Represents error data in the [RFC 7807](https://www.rfc-editor.org/rfc/rfc7807) Problem Details format.
@@ -17,34 +17,34 @@ properties:
       Identifies each error case.
   title:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
       A summary of each error case.
   status:
     type: integer
-    # Set a minimum to e.g. exclude negative numbers
+    
     minimum: 100
     maximum: 600
     description: |
       The HTTP status code that categorizes this error case.
   detail:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
       Diagnostic instructions to locate and fix the problem.
   instance:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
       Unique value generated with each API call.
   errors:
     type: array
-    # While seemingly implicit, specify if the array doesn't repeat items
+    
     uniqueItems: true
-    # minItems:0 if array can be empty; otherwise 1
+   
     minItems: 0
     description: |
       For errors with more than one detected problem, this represents each separately as a nested Problem Details object.

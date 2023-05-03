@@ -1,7 +1,0 @@
-# This is an example of resource headers used to signal the number of resources clients can create or perform actions on.
-# See Resource limiting in https://pulsar.akamai.com/services/apis/api-design-checklist/#rate-and-resource-limiting
-description: |
-  Describe this header.
-schema:
-  type: integer
-  example: 90

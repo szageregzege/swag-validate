@@ -1,5 +1,5 @@
 type: object
-# This specifies: only the defined set of 'properties' are valid:
+
 additionalProperties: false
 description: |
   Summarize this object's scope & function.
@@ -12,52 +12,52 @@ required:
 properties:
   productId:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
       Describe this data member.
   productName:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
       Describe this data member.
   productType:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
-      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from techdocs.akamai.com.
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
     enum:
-      # The first `INTERNAL` enum value is an example of an internal
-      # or pre-release enum value the `_publication.yaml` file sets to
-      # `exclude` from publication and distribution. Since it's
-      # difficult to reliably express an array location as a JSON
-      # Pointer expression, recommend positioning any items to
-      # suppress at the start of the array.
+      
+      
+      
+      
+      
+      
       - INTERNAL
       - STANDARD
       - SPECIAL
       - ONLINE
   productStatus:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
-      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from techdocs.akamai.com.
-    # Link a common set of enum values to ensure consistency across
-    # all schemas
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
+    
+    
     enum:
       $ref: enum-productStatus.yaml
   productDescription:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
       Describe this data member.
   productGuid:
     type: string
-    # minLength:0 if the string can be empty (""); otherwise 1 or more
+    
     minLength: 1
     description: |
       Describe this data member. Internal.

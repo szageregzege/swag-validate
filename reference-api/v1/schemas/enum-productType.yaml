@@ -1,9 +1,9 @@
-# The first `INTERNAL` enum value is an example of an internal
-# or pre-release enum value the `_publication.yaml` file sets to
-# `exclude` from publication and distribution. Since it's
-# difficult to reliably express an array location as a JSON
-# Pointer expression, recommend positioning any items to
-# suppress at the start of the array.
+
+
+
+
+
+
 - INTERNAL
 - STANDARD
 - SPECIAL

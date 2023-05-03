@@ -1,8 +1,0 @@
-# This is an example of EOL headers used to signal when a deprecated call goes EOL with a 410 code.
-# See EOL headers in https://pulsar.akamai.com/services/apis/api-design-checklist/#api-versioning
-description: |
-  Describe this header.
-schema:
-  type: string
-  enum: [OPERATION]
-  example: OPERATION

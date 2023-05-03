@@ -1,15 +1,15 @@
-# Demonstrates a mechanism to paginate and access batches of results.
-# See Paginated results in https://pulsar.akamai.com/services/apis/api-design-checklist/#configurable-collections
+
+
 description: |
   Describe the parameter, `1` by default.
 in: query
 required: false
 name: page
 schema:
-  # Provide any fixed 'default' value if required:false
+  
   default: 1
-  # Set a minimum to e.g. exclude negative numbers
+  
   minimum: 1
   type: integer
-  # Specify a typical 'example' value
+  
   example: 10

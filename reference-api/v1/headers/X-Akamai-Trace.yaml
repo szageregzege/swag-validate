@@ -1,7 +1,0 @@
-# Example of entire internal or pre-release header to suppress from
-# publication and distribution. Specify the set of `exclude.headers`
-# in the `_publication.yaml` file.
-description: |
-  Describe this header.
-schema:
-  type: string

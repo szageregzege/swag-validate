@@ -1,6 +1,4 @@
 openapi: 3.0.0
-x-akamai:
-  auth-type: EDGE_GRID
 info:
   title: Customers
   version: v1
@@ -23,17 +21,9 @@ paths:
         - $ref: parameters/pageSize-query.yaml
       responses:
         200:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
-          headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
+          
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/customers.json
@@ -41,8 +31,8 @@ paths:
                 $ref: schemas/customers.yaml
           description: |
             The response provides the collection of `customers`.
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -76,7 +66,7 @@ paths:
         - $ref: parameters/pageSize-query.yaml
       requestBody:
         content:
-          # Each possible content type, usually just application/json
+          
           application/json:
             example:
               $ref: examples/customer.json
@@ -85,19 +75,12 @@ paths:
         required: true
       responses:
         201:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
+          
           headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
             Location:
               $ref: headers/Location.yaml
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/customer.json
@@ -105,8 +88,8 @@ paths:
                 $ref: schemas/customer.yaml
           description: |
             The response provides data for the customer.
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -139,17 +122,11 @@ paths:
         204:
           description: |
             Customer successfully deleted.
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
-          headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+          
+          
+
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -177,17 +154,11 @@ paths:
         Describe what the operation does here.
       responses:
         200:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
-          headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
+          
+          
+
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/customer.json
@@ -195,8 +166,8 @@ paths:
                 $ref: schemas/customer.yaml
           description: |
             The response provides data for the customer..
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -224,7 +195,7 @@ paths:
         Describe what the operation does here.
       requestBody:
         content:
-          # Each possible content type, usually just application/json
+          
           application/json:
             example:
               $ref: examples/customer.json
@@ -233,17 +204,11 @@ paths:
         required: true
       responses:
         200:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
-          headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
+          
+          
+
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/customer.json
@@ -251,8 +216,8 @@ paths:
                 $ref: schemas/customer.yaml
           description: |
             The response provides data for the customer..
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -291,28 +256,23 @@ paths:
         - $ref: parameters/end-query.yaml
       responses:
         200:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
+          
+          
           headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
+
             Link:
               $ref: headers/Link.yaml
           description: |
             The response provides data for the order.
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/order.json
               schema:
                 $ref: schemas/order.yaml
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -346,7 +306,7 @@ paths:
         - $ref: parameters/pageSize-query.yaml
       requestBody:
         content:
-          # Each possible content type, usually just application/json
+          
           application/json:
             example:
               $ref: examples/order.json
@@ -355,19 +315,14 @@ paths:
         required: true
       responses:
         201:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
+          
+          
           headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
+
             Location:
               $ref: headers/Location.yaml
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/order.json
@@ -375,8 +330,8 @@ paths:
                 $ref: schemas/order.yaml
           description: |
             The response provides data for the order.
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -410,17 +365,12 @@ paths:
         204:
           description: |
             Order successfully deleted.
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
-          headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+          
+          
+          
+
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -448,17 +398,12 @@ paths:
         Describe what the operation does here.
       responses:
         200:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
-          headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
+          
+          
+      
+
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/order.json
@@ -466,8 +411,8 @@ paths:
                 $ref: schemas/order.yaml
           description: |
             The response provides data for the order.
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:
@@ -495,7 +440,7 @@ paths:
         Describe what the operation does here.
       requestBody:
         content:
-          # Each possible content type, usually just application/json
+          
           application/json:
             example:
               $ref: examples/order.json
@@ -504,17 +449,12 @@ paths:
         required: true
       responses:
         200:
-          # Full set of the API's custom response headers
-          # (excluding implicit Accept/Content-Type)
-          headers:
-            Akamai-RateLimit-Limit:
-              $ref: headers/Akamai-RateLimit-Limit.yaml
-            Akamai-RateLimit-Remaining:
-              $ref: headers/Akamai-RateLimit-Remaining.yaml
-            Akamai-RateLimit-Next:
-              $ref: headers/Akamai-RateLimit-Next.yaml
+          
+          
+  
+
           content:
-            # Each possible content type, usually just application/json
+            
             application/json:
               example:
                 $ref: examples/order.json
@@ -522,8 +462,8 @@ paths:
                 $ref: schemas/order.yaml
           description: |
             The response provides data for the order.
-        # Spec the full range of possible error response codes
-        # in the 4xx/5xx range, including API platform-level
+        
+        
         400:
           $ref: errors/400.yaml
         401:

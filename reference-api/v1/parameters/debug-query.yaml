@@ -1,13 +1,12 @@
-# Sample hidden internal or pre-release parameter set to "exclude" in
-# the "_publication.yaml" config file.
+
 description: |
   Describe the parameter here, `false` by default. Internal.
 in: query
 required: false
 name: debug
 schema:
-  # Provide any fixed 'default' value if required:false
+  
   default: false
   type: boolean
-  # Specify a typical 'example' value
+  
   example: true

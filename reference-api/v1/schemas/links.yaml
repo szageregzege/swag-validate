@@ -1,26 +1,26 @@
 description: |
   Link relations to schemas and hypermedia links.
 type: array
-# While seemingly implicit, specify if the array doesn't repeat items
+
 uniqueItems: true
-# minItems:0 if array can be empty; otherwise 1
+
 minItems: 0
 items:
   type: object
-  # This specifies: only the defined set of 'properties' are valid:
+  
   additionalProperties: false
   properties:
     rel:
       description: |
         Describes type of link.
       type: string
-      # minLength:0 if the string can be empty (""); otherwise 1 or more
+      
       minLength: 1
     href:
       description: |
         Link to resource of type described by rel.
       type: string
-      # minLength:0 if the string can be empty (""); otherwise 1 or more
+      
       minLength: 1
   required:
     - rel

@@ -5,5 +5,5 @@ description: |
   Describe the parameter here.
 schema:
   type: string
-  # Specify a typical 'example' value
+  
   example: ef9a3122

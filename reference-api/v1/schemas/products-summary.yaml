@@ -1,5 +1,5 @@
 type: object
-# This specifies: only the defined set of 'properties' are valid:
+
 additionalProperties: false
 description: |
   Summarize this object's scope & function.
@@ -10,13 +10,13 @@ required:
 properties:
   pageSize:
     type: integer
-    # Set a minimum to e.g. exclude negative numbers
+    
     minimum: 1
     description: |
       Describe this data member. Internal.
   page:
     type: integer
-    # Set a minimum to e.g. exclude negative numbers
+    
     minimum: 0
     description: |
       Describe this data member. Internal.
@@ -32,9 +32,9 @@ properties:
       Describe this data member.
   products:
     type: array
-    # While seemingly implicit, specify if the array doesn't repeat items
+    
     uniqueItems: true
-    # minItems:0 if array can be empty; otherwise 1
+   
     minItems: 0
     description: |
       Describe this data member.

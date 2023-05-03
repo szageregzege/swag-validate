@@ -1,5 +1,5 @@
-# Demonstrates a mechanism to sort results by specific order or field names.
-# See Sortable results in https://pulsar.akamai.com/services/apis/api-design-checklist/#configurable-collections
+
+
 description: |
   Specifies the sort order of the returned collection.
 in: query
@@ -7,5 +7,5 @@ required: false
 name: sortBy
 schema:
   type: string
-  # Specify a typical 'example' value
+  
   example: createdTime

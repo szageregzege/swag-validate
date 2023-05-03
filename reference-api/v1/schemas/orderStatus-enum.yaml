@@ -1,6 +1,4 @@
-# This demonstrates how to define a common set of source-of-truth enum
-# values, which you can use `$ref` to link from various schema
-# properties or parameter definitions.
+
 - PENDING
 - GA
 - ACTIVE

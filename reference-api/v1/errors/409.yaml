@@ -1,6 +1,6 @@
-# Sample error response spec. Assign for each possible error code to
-# each operation. Link a common error schema.  Any `example` only
-# needs to demonstate a single instance of the error.
+
+
+
 description: |
   [Conflict](ref:409).
 content:
