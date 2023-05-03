@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Subcustomer geobilling usage
+  version: 'v1'
+servers:
+  - url: https://{hostname}/billing/v1
+paths:
+  /contracts/{contractId}/products/{productId}/geo-billing-files:
+    parameters:
+      - $ref: parameters/productId-path.yaml
+      - $ref: parameters/contractId-path.yaml
+    get:
+      operationId: get-contract-product-geo-billing-files
+      tags: [Subcustomer geobilling usage]
+      summary: Download subcustomer geobilling files
+      description: |
+        Provides details on subcustomer invoicing for each geographic zone within the Akamai network for Akamai Cloud Embed. The downloadable file is available in the response body, formatted as a gzip-compressed CSV. The `Param-md5-uncompressed` response header provides an MD5 checksum for the uncompressed file. See [GEO_ID codes](ref:geo-id-codes) for details on each geographic code. For information on how to interpret `SUB_CUST_ID` values, see the [Cloud Embed - Implementation Guide](https://control.akamai.com/apps/download-center/#/artifacts/2950;name=Cloud-Embed-user-guide.pdf).
+      parameters:
+        - $ref: parameters/day-query.yaml
+        - $ref: parameters/month-query.yaml
+        - $ref: parameters/year-query.yaml
+      responses:
+        200:
+          description: |
+            The operation was successful.
+          headers:
+            Param-md5-uncompressed:
+              $ref: headers/Param-md5-uncompressed.yaml
+          content:
+            application/octet-stream:
+              schema:
+                $ref: schemas/geobilling-usage-schema.yaml
+              example:
+                $ref: examples/billed_2017-01-21_3-1abcd2_m-lc-159866_52d160f07262f5928655096163d12b2e.csv
+        204:
+          description: |
+            No content. No data to be returned for the requested parameters.
+        400:
+          $ref: errors/400.yaml
+        401:
+          $ref: errors/401.yaml
+        403:
+          $ref: errors/403.yaml
+        404:
+          content:
+            application/problem+json:
+              example:
+                $ref: examples/geobilling-404.json
+              schema:
+                $ref: schemas/problem-404.yaml
+          description: |
+            [Resource not found](ref:404).
+        500:
+          $ref: errors/500.yaml

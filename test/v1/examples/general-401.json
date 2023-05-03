@@ -1,0 +1,12 @@
+{
+  "type": "https://problems.luna.akamaiapis.net/-/pep-authn/deny",
+  "title": "Not authorized",
+  "status": 401,
+  "detail": "The signature does not match",
+  "instance": "https://akab-xxxxx-xxxxx.luna.akamaiapis.net/billing/v1/contracts/1-ABCDEF/products?start=2021-01&end=2021-03",
+  "method": "GET",
+  "serverIp": "203.0.113.0",
+  "clientIp": "192.0.2.0",
+  "requestId": "933ed8a4",
+  "requestTime": "2023-02-26T17:41:25Z"
+}

@@ -1,0 +1,88 @@
+{
+  "start": "2020-07",
+  "end": "2020-09",
+  "requestDate": "2020-10-15T00:00:00Z",
+  "accountId": "1-ABCD",
+  "contractId": "1-ABCDEF",
+  "productId": "1-ABC012",
+  "productName": "Web Application Accelerator",
+  "reportingGroupId": 782312,
+  "reportingGroupName": "RG #782312",
+  "usagePeriods": [
+    {
+      "month": "2020-07",
+      "start": "2017-07-01",
+      "end": "2017-07-31",
+      "region": "GLOBAL",
+      "dataStatus": "DATA_FINALIZED",
+      "cpCodes": [
+        255956,
+        255957,
+        255958,
+        255959
+      ],
+      "stats": [
+        {
+          "statType": "Total MB",
+          "unit": "GB",
+          "value": 30.3
+        },
+        {
+          "statType": "Total Hits",
+          "unit": "Total Hits",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "month": "2020-08",
+      "start": "2020-08-01",
+      "end": "2020-08-15",
+      "region": "GLOBAL",
+      "dataStatus": "COLLECTING_DATA",
+      "cpCodes": [
+        255956,
+        255957,
+        255958,
+        255959
+      ],
+      "stats": [
+        {
+          "statType": "Total MB",
+          "unit": "GB",
+          "value": 300.3
+        },
+        {
+          "statType": "Total Hits",
+          "unit": "Total Hits",
+          "value": 55
+        }
+      ]
+    },
+    {
+      "month": "2020-08",
+      "start": "2020-08-16",
+      "end": "2020-08-31",
+      "region": "GLOBAL",
+      "dataStatus": "COLLECTING_DATA",
+      "cpCodes": [
+        255956,
+        255957,
+        255958,
+        255959
+      ],
+      "stats": [
+        {
+          "statType": "Total MB",
+          "unit": "GB",
+          "value": 300.3
+        },
+        {
+          "statType": "Total Hits",
+          "unit": "Total Hits",
+          "value": 55
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+type: object
+description: |
+  Specifies the errors.
+properties:
+  timestamp:
+    type: string
+    description: |
+      Request date expressed as an ISO 8601 timestamp.
+  status:
+    type: integer
+    description: |
+      HTTP status code.
+  error:
+    type: string
+    description: |
+      Specifies the error that occured.
+  path:
+    type: string
+    description: |
+      The URL path for this error occurrence.
+additionalProperties: false

@@ -1,0 +1,8 @@
+description: |
+  Identifies the contract that you want to see aggregated data from.
+in: path
+name: contractId
+required: true
+schema:
+  type: string
+  example: 1-ABCDEF

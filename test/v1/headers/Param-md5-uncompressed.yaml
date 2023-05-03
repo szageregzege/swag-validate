@@ -1,0 +1,5 @@
+description: |
+  Provides an MD5 checksum for the uncompressed file.
+schema:
+  type: string
+  example: 52d160f07262f5928655096163d12b2e

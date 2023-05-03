@@ -1,0 +1,14 @@
+# Identifies the ReadMe project to publish in, corresponding to:
+# https://techdocs.akamai.com/{id}/reference
+id: billing-app
+# Official marketing title of the API, matching the page above
+title: Billing API
+# Major API version, which typically appears in the API's URLs
+version: v1
+service-type: OPERATIONS
+service-summary: |
+  Access your account's monthly usage of Akamai services.
+# Whether these files distribute to public Github:
+# https://techdocs.akamai.com/internal-ux-writing/docs/swag-tool-extensions#exclude-the-entire-openapi-bundle
+exclude:
+  exclude-from-github: false

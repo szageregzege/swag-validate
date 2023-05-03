@@ -1,0 +1,8 @@
+description: |
+  [Unauthorized error](ref:401).
+content:
+  application/problem+json:
+    example:
+      $ref: ../examples/general-401.json
+    schema:
+      $ref: ../schemas/problem-401.yaml

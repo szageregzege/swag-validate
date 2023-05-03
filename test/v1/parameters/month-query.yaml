@@ -1,0 +1,8 @@
+description: |
+  The month for which you want to see aggregated data. You need to specify corresponding `year` and `day` values.
+in: query
+name: month
+required: true
+schema:
+  type: integer
+  example: 7

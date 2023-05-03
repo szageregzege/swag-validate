@@ -1,0 +1,11 @@
+{
+  "type": "/billing/error-types/9",
+  "title": "An error occurred during communication with external system",
+  "incidentId": "c93b9d35-4a6a-4f39-ba7d-2d718e04b92b",
+  "errors": [
+    {
+      "type": "/billing/error-types/9",
+      "title": "The service is currently unavailable."
+    }
+  ]
+}

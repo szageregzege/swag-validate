@@ -1,0 +1,137 @@
+description: |
+  Daily usage data per contract and product.
+type: object
+properties:
+  month:
+    type: string
+    format: date
+    description: |
+      Selected billable usage period, expressed as an ISO 8601 datestamp.
+  requestDate:
+    type: string
+    format: date-time
+    description: |
+      Request date expressed as an ISO 8601 timestamp.
+  accountId:
+    type: string
+    minLength: 1
+    description: |
+      Identifies the account.
+  contractId:
+    type: string
+    minLength: 1
+    description: |
+      Identifies the contract the data reflects.
+  productId:
+    type: string
+    minLength: 1
+    description: |
+      Identifies the product whose usage the data reflects.
+  productName:
+    type: string
+    minLength: 1
+    description: |
+      The name of the product whose usage the data reflects.
+  dataStatus:
+    type: string
+    enum:
+      - COLLECTING_DATA
+      - DATA_COLLECTED
+      - DATA_FINALIZED
+    description: |
+      The status of the bill data. These are the available values: `COLLECTING_DATA` for data that is being collected. Data is collected through the end of the month, and is used to prepare your invoice. `DATA_COLLECTED` for data that is complete. The invoice is being prepared, if you're expecting one. If you had contract changes, data will be adjusted to reflect them. `DATA_FINALIZED` for final data that is on your invoice.
+  usagePeriods:
+    type: array
+    minItems: 1
+    description: |
+      Specifies usage periods.
+    items:
+      type: object
+      properties:
+        month:
+          type: string
+          format: date
+          description: |
+            Selected billable usage period, expressed as an ISO 8601 datestamp.
+        start:
+          type: string
+          format: date
+          description: |
+            The start of the billable usage period, expressed as an ISO 8601 date.
+        end:
+          type: string
+          format: date
+          description: |
+            The end of the billable usage period, expressed as an ISO 8601 date.
+        region:
+          type: string
+          minLength: 1
+          description: |
+            The billing region the data reflects.
+        stats:
+          type: array
+          minItems: 1
+          description: |
+            Contains metadata that characterizes usage data.
+          items:
+            type: object
+            properties:
+              statType:
+                type: string
+                minLength: 1
+                description: |
+                  The type of statistic.
+              unit:
+                type: string
+                minLength: 1
+                description: |
+                  Specifies the unit of measure.
+              isBillable:
+                type: boolean
+                description: |
+                  Whether the usage is billable.
+              values:
+                type: array
+                minItems: 1
+                description: |
+                  Contains usage data.
+                items:
+                  type: object
+                  properties:
+                    date:
+                      type: string
+                      format: date
+                      description: |
+                        The ISO 8601 date for when the usage occurred.
+                    value:
+                      type: number
+                      minimum: 0
+                      description: |
+                        Provides the raw measure of numeric usage data.
+                  required:
+                    - date
+                    - value
+                  additionalProperties: false
+            required:
+              - statType
+              - unit
+              - isBillable
+              - values
+            additionalProperties: false
+      required:
+        - month
+        - start
+        - end
+        - region
+        - stats
+      additionalProperties: false
+required:
+  - month
+  - requestDate
+  - accountId
+  - contractId
+  - productId
+  - productName
+  - dataStatus
+  - usagePeriods
+additionalProperties: false

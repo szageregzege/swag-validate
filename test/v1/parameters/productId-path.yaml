@@ -1,0 +1,8 @@
+description: |
+  Identifies the product you want to see aggregated data for.
+in: path
+name: productId
+required: true
+schema:
+  type: string
+  example: 1-ABC012

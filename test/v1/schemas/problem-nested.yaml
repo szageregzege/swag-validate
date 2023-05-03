@@ -1,0 +1,16 @@
+type: object
+description: |
+  A further nested problem object.
+properties:
+  type:
+    type: string
+    description: |
+      Type of error.
+  title:
+    type: string
+    description: |
+      Title of the error.
+required:
+  - type
+  - title
+additionalProperties: false

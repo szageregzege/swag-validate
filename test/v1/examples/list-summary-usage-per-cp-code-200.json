@@ -1,0 +1,97 @@
+{
+  "start": "2020-07",
+  "end": "2020-09",
+  "requestDate": "2020-10-15T00:00:00Z",
+  "accountId": "1-ABCD",
+  "contractId": "1-ABCDEF",
+  "productId": "1-ABC012",
+  "productName": "Web Application Accelerator",
+  "usagePeriods": [
+    {
+      "region": "GLOBAL",
+      "month": "2020-07",
+      "dataStatus": "COLLECTING_DATA",
+      "start": "2020-07-01",
+      "end": "2020-07-31",
+      "cpCodeStats": [
+        {
+          "cpCode": 12345,
+          "stats": [
+            {
+              "statType": "GB",
+              "unit": "GB",
+              "isBillable": true,
+              "value": 106.3
+            },
+            {
+              "statType": "Hits",
+              "unit": "Hits",
+              "isBillable": false,
+              "value": 430
+            }
+          ]
+        },
+        {
+          "cpCode": 67890,
+          "stats": [
+            {
+              "statType": "GB",
+              "unit": "GB",
+              "isBillable": true,
+              "value": 221.3
+            },
+            {
+              "statType": "Hits",
+              "unit": "Hits",
+              "isBillable": false,
+              "value": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "region": "GLOBAL",
+      "month": "2020-08",
+      "dataStatus": "COLLECTING_DATA",
+      "start": "2020-08-01",
+      "end": "2020-08-31",
+      "cpCodeStats": [
+        {
+          "cpCode": 12345,
+          "stats": [
+            {
+              "statType": "GB",
+              "unit": "GB",
+              "isBillable": true,
+              "value": 115.22
+            },
+            {
+              "statType": "Hits",
+              "unit": "Hits",
+              "isBillable": false,
+              "value": 500
+            }
+          ]
+        },
+        {
+          "cpCode": 67890,
+          "stats": [
+            {
+              "statType": "GB",
+              "unit": "GB",
+              "isBillable": true,
+              "value": 76.3
+            },
+            {
+              "statType": "Hits",
+              "unit": "Hits",
+              "isBillable": false,
+              "value": 320
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
