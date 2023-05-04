@@ -38,6 +38,15 @@ pipeline {
                         sh 'python3 /Users/mprzybus/.jenkins/workspace/validate-api-doc/my_app/swag-tool preview'
 
                     }
+                    script {
+                        sh """
+                            if [ ! -s ./blocking ]; then
+                                echo "File is empty, failing build"
+                                error "File is empty"
+                            fi
+                        """
+    }
+}
 
                 }
 
