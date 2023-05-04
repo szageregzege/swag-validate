@@ -1,8 +1,0 @@
-description: |
-  The end (exclusive) of the billable usage period, expressed as an ISO 8601 datestamp (YYYY-MM).
-in: query
-name: end
-required: true
-schema:
-  type: string
-  example: "2020-09"

@@ -1,8 +1,0 @@
-description: |
-  [Service unavailable](ref:503).
-content:
-  application/problem+json:
-    example:
-      $ref: ../examples/general-503.json
-    schema:
-      $ref: ../schemas/problem.yaml

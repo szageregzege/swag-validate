@@ -1,8 +1,0 @@
-description: |
-  Identifies the reporting group that you want to see aggregated data for.
-in: path
-name: reportingGroupId
-required: true
-schema:
-  type: integer
-  example: 782312

@@ -1,8 +1,0 @@
-description: |
-  The year for which you want to see aggregated data. You need to specify corresponding `month` and `day` values.
-in: query
-name: year
-required: true
-schema:
-  type: integer
-  example: 2015
