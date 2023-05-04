@@ -42,9 +42,9 @@ pipeline {
                 }
                 script {
                     sh """
-                        if [ ! -s /path/to/file ]; then
-                            echo "File is empty, failing build"
-                            error "File is empty"
+                        if [ -s ./blocking ]; then
+                            echo "File is not empty, failing build"
+                            error "File is not empty"
                         fi
                     """
                 }
