@@ -22,7 +22,7 @@ pipeline {
                 sh 'npm install -g openapi-enforcer-cli'
             }
         }
-        stage('Checkout') {
+        stage('Checkout validator ') {
             steps {
                 dir('my_app') {
 
@@ -30,7 +30,7 @@ pipeline {
                 }
             }
         }
-        stage('Run App') {
+        stage('Run validation') {
             steps {
                 dir('reference-api/v1') {
                     withPythonEnv('python3') {
@@ -43,8 +43,7 @@ pipeline {
                 script {
                     sh """
                         if [ -s ./blocking ]; then
-                            echo "File is not empty, failing build"
-                            error "File is not empty"
+                            error "Address the blocking errors before publishing"
                         fi
                     """
                 }
