@@ -22,7 +22,7 @@ pipeline {
                 sh 'npm install -g openapi-enforcer-cli'
             }
         }
-        stage('Checkout validator ') {
+        stage('Checkout Validator ') {
             steps {
                 dir('my_app') {
 
@@ -30,7 +30,7 @@ pipeline {
                 }
             }
         }
-        stage('Run validation') {
+        stage('Run Validation') {
             steps {
                 dir('reference-api/v1') {
                     withPythonEnv('python3') {
@@ -40,8 +40,6 @@ pipeline {
                     }
 
                 }
-
-
             }
         }
 
@@ -57,7 +55,6 @@ pipeline {
                 }
             }
         }
-
 
     }
 
