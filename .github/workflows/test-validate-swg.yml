@@ -24,11 +24,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Swagger Validator
         run: npm install -g openapi-enforcer-cli
-      - name: Validate Swagger
-        run: |
-          openapi-enforcer validate ./swg.openapi.yaml 
           
-      - name: Pass build
+      - name: Validate Swagger
         run: |
           openapi-enforcer validate ./swg.openapi.yaml 2> err.log
           if [ -s err.log ]; then
