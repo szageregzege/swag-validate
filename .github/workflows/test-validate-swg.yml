@@ -26,7 +26,11 @@ jobs:
         run: npm install -g openapi-enforcer-cli
       - name: Validate Swagger
         run: |
-          openapi-enforcer validate swg.openapi.yaml 2> err.log
+          openapi-enforcer validate ./swg.openapi.yaml 
+          
+      - name: Pass build
+        run: |
+          openapi-enforcer validate ./swg.openapi.yaml 2> err.log
           if [ -s err.log ]; then
             echo "OpenAPI validation failed with the following error(s):"
             cat err.log
