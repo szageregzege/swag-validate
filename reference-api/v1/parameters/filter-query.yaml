@@ -5,5 +5,4 @@ required: false
 name: filter
 schema:
   type: string
-  
-  example: search string
+  example: search-string
