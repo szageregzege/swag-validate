@@ -26,7 +26,7 @@ pipeline {
             steps {
                 dir('my_app') {
 
-                    sh "cp -r /Users/mprzybus/Desktop/akamai-readmeio-tooling/swag-tools/src/* ."
+                    sh "cp -r /Users/mprzybus/Desktop/akamai-readmeio-tooling-SOAP/swag-tools/src/* ."
                 }
             }
         }
