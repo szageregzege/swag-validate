@@ -1,0 +1,389 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Customers",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://{hostname}/commerce/v1"
+    }
+  ],
+  "paths": {
+    "/customers": {
+      "get": {
+        "operationId": "get-customers",
+        "summary": "List customers",
+        "tags": [
+          "Customers"
+        ],
+        "description": "Describe what the operation does here.\n",
+        "parameters": [
+          {
+            "description": "Describe the parameter here, `summary` by default.\n",
+            "in": "query",
+            "required": false,
+            "name": "view",
+            "schema": {
+              "default": "summary",
+              "type": "string",
+              "example": "detailed",
+              "enum": [
+                "summary",
+                "detailed"
+              ]
+            }
+          },
+          {
+            "description": "Describe the parameter here.\n",
+            "in": "query",
+            "required": false,
+            "name": "filter",
+            "schema": {
+              "type": "string",
+              "example": "search string"
+            }
+          },
+          {
+            "description": "Specifies the sort order of the returned collection.\n",
+            "in": "query",
+            "required": false,
+            "name": "sortBy",
+            "schema": {
+              "type": "string",
+              "example": "createdTime"
+            }
+          },
+          {
+            "description": "Describe the parameter, `1` by default.\n",
+            "in": "query",
+            "required": false,
+            "name": "page",
+            "schema": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer",
+              "example": 10
+            }
+          },
+          {
+            "description": "Describe the parameter here, `100` by default.\n",
+            "in": "query",
+            "required": false,
+            "name": "pageSize",
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "example": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "customers": [
+                    {
+                      "customerId": "ef9a3122",
+                      "customerName": "...actual non-placeholder data that represents actual, non-'test' usage...",
+                      "customerDescription": "...actual non-placeholder data that represents actual, non-'test' usage...",
+                      "customerStatus": "ACTIVE",
+                      "customerType": "STANDARD",
+                      "links": [
+                        {
+                          "href": "/commerce/v1/customers/ef9a3122",
+                          "rel": "self"
+                        },
+                        {
+                          "href": "/commerce/v1/customers/vskzsmv2/ef9a3122?page=1&pageSize=50",
+                          "rel": "orders"
+                        }
+                      ]
+                    },
+                    {
+                      "customerId": "vskzsmv2",
+                      "customerName": "...actual non-placeholder data that represents actual, non-'test' usage...",
+                      "customerDescription": "...actual non-placeholder data that represents actual, non-'test' usage...",
+                      "customerStatus": "ACTIVE",
+                      "customerType": "STANDARD",
+                      "links": [
+                        {
+                          "href": "/commerce/v1/customers/vskzsmv2",
+                          "rel": "self"
+                        },
+                        {
+                          "href": "/commerce/v1/customers/vskzsmv2/orders?page=1&pageSize=50",
+                          "rel": "orders"
+                        }
+                      ]
+                    }
+                  ],
+                  "links": [
+                    {
+                      "href": "/commerce/v1/customers?page=1&pageSize=3",
+                      "rel": "first"
+                    },
+                    {
+                      "href": "/commerce/v1/customers?page=2&pageSize=3",
+                      "rel": "next"
+                    }
+                  ]
+                },
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "description": "Summarize this object's scope & function.\n",
+                  "required": [
+                    "customers"
+                  ],
+                  "properties": {
+                    "customers": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 0,
+                      "description": "List of customers.\n",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "description": "Summarize this object's scope & function.\n",
+                        "required": [
+                          "customerId",
+                          "customerName",
+                          "customerStatus",
+                          "customerType",
+                          "customerDescription"
+                        ],
+                        "properties": {
+                          "customerId": {
+                            "type": "string",
+                            "readOnly": true,
+                            "minLength": 1,
+                            "description": "Describe this data member.\n"
+                          },
+                          "customerName": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Describe this data member.\n"
+                          },
+                          "customerType": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from \n",
+                            "enum": [
+                              "REGULAR",
+                              "PREMIUM"
+                            ]
+                          },
+                          "customerStatus": {
+                            "type": "string",
+                            "minLength": 1,
+                            "readOnly": true,
+                            "description": "Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from \n",
+                            "enum": [
+                              "PENDING",
+                              "GA",
+                              "ACTIVE",
+                              "BETA",
+                              "DEPRECATED"
+                            ]
+                          },
+                          "customerDescription": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Describe this data member.\n"
+                          },
+                          "modifiedTime": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Summarize this object's scope & function.\n",
+                            "readOnly": true
+                          },
+                          "modifiedBy": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Summarize this object's scope & function.\n",
+                            "readOnly": true
+                          },
+                          "createdTime": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Summarize this object's scope & function.\n",
+                            "readOnly": true
+                          },
+                          "createdBy": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Summarize.\n",
+                            "readOnly": true
+                          },
+                          "links": {
+                            "description": "Link relations to schemas and hypermedia links.\n",
+                            "type": "array",
+                            "uniqueItems": true,
+                            "minItems": 0,
+                            "items": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "rel": {
+                                  "description": "Describes type of link.\n",
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "href": {
+                                  "description": "Link to resource of type described by rel.\n",
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "rel",
+                                "href"
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "links": {
+                      "readOnly": true,
+                      "description": "Link relations to schemas and hypermedia links.\n",
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 0,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "rel": {
+                            "description": "Describes type of link.\n",
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "href": {
+                            "description": "Link to resource of type described by rel.\n",
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "rel",
+                          "href"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "The response provides the collection of `customers`.\n   \n"
+          },
+          "400": {
+            "description": "[Bad request](ref:400).\n",
+            "content": {
+              "application/problem+json": {
+                "example": {
+                  "type": "...actual non-placeholder data that represents actual, non-'test' usage...",
+                  "instance": "...actual non-placeholder data that represents actual, non-'test' usage...",
+                  "detail": "...actual non-placeholder data that represents actual, non-'test' usage...",
+                  "status": 400,
+                  "title": "...actual non-placeholder data that represents actual, non-'test' usage..."
+                },
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "description": "Represents error data in the [RFC 7807](https://www.rfc-editor.org/rfc/rfc7807) Problem Details format.\n",
+                  "required": [
+                    "type",
+                    "title",
+                    "status",
+                    "detail",
+                    "instance"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Identifies each error case.\n"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "A summary of each error case.\n"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "minimum": 100,
+                      "maximum": 600,
+                      "description": "The HTTP status code that categorizes this error case.\n"
+                    },
+                    "detail": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "Diagnostic instructions to locate and fix the problem.\n"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "Unique value generated with each API call.\n"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 0,
+                      "description": "For errors with more than one detected problem, this represents each separately as a nested Problem Details object.\n",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "description": "Represents error data in the [RFC 7807](https://www.rfc-editor.org/rfc/rfc7807) Problem Details format.\n",
+                        "required": [
+                          "type",
+                          "title",
+                          "status",
+                          "detail",
+                          "instance"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "Identifies each error case.\n"
+                          },
+                          "title": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "A summary of each error case.\n"
+                          },
+                          "status": {
+                            "type": "integer",
+                            "minimum": 100,
+                            "maximum": 600,
+                            "description": "The HTTP status code that categorizes this error case.\n"
+                          },
+                          "detail": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Diagnostic instructions to locate and fix the problem.\n"
+                          },
+                          "instance": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Unique value generated with each API call.\n"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
