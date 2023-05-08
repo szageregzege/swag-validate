@@ -40,16 +40,24 @@ pipeline {
                     }
 
                 }
-                script {
-                    sh """
-                        if [ -s ./blocking ]; then
-                            error "Address the blocking errors before publishing"
-                        fi
-                    """
-                }
+
 
             }
-         }
+        }
+
+        stage('Check Blocking Errors') {
+            steps {
+                dir('reference-api/v1') {
+                    script {
+                        def blockingContent = readFile 'blocking.txt'
+                        if (blockingContent) {
+                            error 'Build failed: Address blocking issues'
+                        }
+                    }
+                }
+            }
+        }
+
 
     }
 
