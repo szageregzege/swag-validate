@@ -12,7 +12,7 @@ paths:
       tags:
         - Customers
       description: |
-        Describe what the operation does here and here.
+        Describe what the operation does here.
       parameters:
         - $ref: parameters/view-query.yaml
         - $ref: parameters/filter-query.yaml
