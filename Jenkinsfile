@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+       PYENCHANT_LIBRARY_PATH = "/opt/homebrew/lib/libenchant-2.2.dylib"                               //can be used in whole pipeline
+    } 
     tools {
         nodejs '20.0.0'
     }
