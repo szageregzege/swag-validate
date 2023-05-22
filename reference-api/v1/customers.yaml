@@ -22,8 +22,7 @@ paths:
               schema:
                 $ref: schemas/customers.yaml
           description: |
-            The response provides the collection of `customers`.
-               
+            The response provides the collection of `customers`.             
         400:
           $ref: errors/400.yaml
        
