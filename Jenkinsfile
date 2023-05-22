@@ -56,14 +56,14 @@ pipeline {
                         echo "Nearest parent folder: ${nearestParentFolder}"
                         env.PARENT_FOLDER = nearestParentFolder
                     } else {
-                        error "No changes found in a parent folder matching the pattern v[1-9]."
+                        echo "No changes found in a parent folder matching the pattern v[1-9]."
                     }
                 }
             }
         }
         stage('Run Validation') {
             steps {
-                dir('reference-api/v1') {
+                dir('${env.PARENT_FOLDER}') {
                     withPythonEnv('python3') {
 
                         sh 'python3 /Users/mprzybus/.jenkins/workspace/validate-api-doc/my_app/swag-tool preview'
