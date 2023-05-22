@@ -63,7 +63,7 @@ pipeline {
         }
         stage('Run Validation') {
             steps {
-                dir('reference-api/v1') {
+                dir("${env.PARENT_FOLDER}") {
                     withPythonEnv('python3') {
 
                         sh 'python3 /Users/mprzybus/.jenkins/workspace/validate-api-doc/my_app/swag-tool preview'
