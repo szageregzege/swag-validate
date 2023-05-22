@@ -28,10 +28,8 @@ properties:
     minLength: 1
     description: |
       Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
-
   customerStatus:
     type: string
-
     minLength: 1
     readOnly: true
     description: |
