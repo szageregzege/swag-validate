@@ -12,10 +12,9 @@ paths:
       summary: List products
       tags:
       - Products
-      description: 'This operation returns a list of products, optionally paginated
+      description: |
+        This operation returns a list of products, optionally paginated
         or filtered by type of product or date when first made available.
-
-        '
       parameters:
       - name: productType
         description: 'Describe the parameter here.
