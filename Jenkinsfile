@@ -47,7 +47,7 @@ pipeline {
                         def parentFolderPattern = /^(.*\/)?(v[1-9])$/
                         def match = file =~ parentFolderPattern
                         if (match) {
-                            nearestParentFolder = matcher ? matcher[0][2] : null
+                            nearestParentFolder = match ? match[0][2] : null
                             break
                         }
                     }
