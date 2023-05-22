@@ -33,6 +33,34 @@ pipeline {
                 }
             }
         }
+        stage('Identify Parent Folder') {
+            steps {
+                script {
+                    def changedFiles = sh (
+                        returnStdout: true,
+                        script: 'git diff --name-only HEAD~1..HEAD'
+                    ).trim().split('\n')
+
+                    def nearestParentFolder = null
+
+                    for (file in changedFiles) {
+                        def parentFolder = file.substring(0, file.lastIndexOf('/'))
+                        def match = parentFolder =~ /v[1-9]$/
+                        if (match) {
+                            nearestParentFolder = parentFolder
+                            break
+                        }
+                    }
+
+                    if (nearestParentFolder) {
+                        echo "Nearest parent folder: ${nearestParentFolder}"
+                        env.PARENT_FOLDER = nearestParentFolder
+                    } else {
+                        error "No changes found in a parent folder matching the pattern v[1-9]."
+                    }
+                }
+            }
+        }
         stage('Run Validation') {
             steps {
                 dir('reference-api/v1') {
