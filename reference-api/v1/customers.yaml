@@ -13,12 +13,6 @@ paths:
         - Customers
       description: |
         Describe what the operation does here.
-      parameters:
-        - $ref: parameters/view-query.yaml
-        - $ref: parameters/filter-query.yaml
-        - $ref: parameters/sortBy-query.yaml
-        - $ref: parameters/page-query.yaml
-        - $ref: parameters/pageSize-query.yaml
       responses:
         200:     
           content:  
