@@ -36,8 +36,6 @@ properties:
     readOnly: true
     description: |
       Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
-
-
     enum:
       $ref: enum-customerStatus.yaml
   customerDescription:
