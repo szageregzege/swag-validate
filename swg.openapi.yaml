@@ -53,9 +53,8 @@ paths:
           minimum: 1
           type: integer
           example: 50
-      - description: 'Describe the parameter here, `false` by default. Internal.
-
-          '
+      - description: |
+          Describe the parameter here, `false` by default. Internal.
         in: query
         required: false
         name: debug
