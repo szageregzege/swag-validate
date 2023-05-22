@@ -44,10 +44,10 @@ pipeline {
                     def nearestParentFolder = null
 
                     for (file in changedFiles) {
-                        def parentFolder = file.substring(0, file.lastIndexOf('/'))
-                        def match = parentFolder =~ /v[1-9]$/
+                        def parentFolderPattern = /^(.*\/)?(v[1-9])$/
+                        def match = file =~ parentFolderPattern
                         if (match) {
-                            nearestParentFolder = parentFolder
+                            nearestParentFolder = matcher ? matcher[0][2] : null
                             break
                         }
                     }
