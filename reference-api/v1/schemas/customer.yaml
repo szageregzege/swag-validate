@@ -1,5 +1,4 @@
 type: object
-
 additionalProperties: false
 description: |
   Summarize this object's scope & function.
@@ -13,37 +12,36 @@ properties:
   customerId:
     type: string
     readOnly: true
-    
+
     minLength: 1
     description: |
       Describe this data member.
   customerName:
     type: string
-    
+
     minLength: 1
     description: |
       Describe this data member.
   customerType:
     type: string
-    
+
     minLength: 1
     description: |
       Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
-    
+
   customerStatus:
     type: string
-    
+
     minLength: 1
     readOnly: true
     description: |
       Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
-    
-    
+
+
     enum:
       $ref: enum-customerStatus.yaml
   customerDescription:
     type: string
-    
     minLength: 1
     description: |
       Describe this data member.
