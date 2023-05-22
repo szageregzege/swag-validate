@@ -51,19 +51,15 @@ pipeline {
                             break
                         }
                     }
+                    echo "Nearest parent folder: ${nearestParentFolder}"
+                    env.PARENT_FOLDER = nearestParentFolder
 
-                    if (nearestParentFolder) {
-                        echo "Nearest parent folder: ${nearestParentFolder}"
-                        env.PARENT_FOLDER = nearestParentFolder
-                    } else {
-                        echo "No changes found in a parent folder matching the pattern v[1-9]."
-                    }
                 }
             }
         }
         stage('Run Validation') {
             steps {
-                dir('${env.PARENT_FOLDER}') {
+                dir("${env.PARENT_FOLDER}") {
                     withPythonEnv('python3') {
 
                         sh 'python3 /Users/mprzybus/.jenkins/workspace/validate-api-doc/my_app/swag-tool preview'
