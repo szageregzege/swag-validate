@@ -1,5 +1,4 @@
-xtype: object
-
+type: object
 additionalProperties: false
 description: |
   Summarize this object's scope & function.
