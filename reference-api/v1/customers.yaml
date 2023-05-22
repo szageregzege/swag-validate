@@ -8,7 +8,7 @@ paths:
   /customers:
     get:
       operationId: get-customers
-      summary: List customers
+      summary: List of customers
       tags:
         - Customers
       description: |
