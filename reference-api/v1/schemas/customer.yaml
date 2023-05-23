@@ -12,19 +12,16 @@ properties:
   customerId:
     type: string
     readOnly: true
-
     minLength: 1
     description: |
       Describe this data member.
   customerName:
     type: string
-
     minLength: 1
     description: |
       Describe this data member.
   customerType:
     type: string
-
     minLength: 1
     description: |
       Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
