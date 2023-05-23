@@ -1,0 +1,12 @@
+
+description: |
+  Describe the parameter here, `false` by default. Internal.
+in: query
+required: false
+name: debug
+schema:
+  
+  default: false
+  type: boolean
+  
+  example: true

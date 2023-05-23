@@ -1,0 +1,15 @@
+
+id: akamai-reference
+
+title: Akamai Reference API
+
+service-type: OPERATIONS
+
+service-summary: |
+  This provides sample OpenAPI source for a hypothetical API.
+
+version: v1
+
+exclude:
+  exclude-from-github: true
+  exclude-reason: PRE_RELEASE

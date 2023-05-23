@@ -1,0 +1,17 @@
+{
+  "customerId": "ef9a3122",
+  "customerName": "...actual non-placeholder data that represents actual, non-'test' usage...",
+  "customerDescription": "...actual non-placeholder data that represents actual, non-'test' usage...",
+  "customerStatus": "ACTIVE",
+  "customerType": "STANDARD",
+  "links": [
+    {
+      "href": "/commerce/v1/customers/ef9a3122",
+      "rel": "self"
+    },
+    {
+      "href": "/commerce/v1/customers/ef9a3122/orders?page=1&pageSize=50",
+      "rel": "orders"
+    }
+  ]
+}

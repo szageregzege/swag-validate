@@ -1,0 +1,8 @@
+description: |
+  Describe the parameter here.
+in: query
+required: false
+name: filter
+schema:
+  type: string
+  example: search-string

@@ -1,0 +1,60 @@
+type: object
+
+additionalProperties: false
+description: |
+  Summarize this object's scope & function.
+required:
+  - orderId
+  - orderName
+  - orderType
+  - orderStatus
+  - orderDescription
+properties:
+  orderId:
+    type: string
+    
+    minLength: 1
+    readOnly: true
+    description: |
+      Describe this data member.
+  orderName:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member.
+  orderType:
+    type: string
+    
+    minLength: 1
+    description: |
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
+    
+    
+    enum:
+      $ref: orderType-enum.yaml
+  orderStatus:
+    type: string
+    readOnly: true
+    description: |
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
+    
+    
+    enum:
+      $ref: orderStatus-enum.yaml
+  orderDescription:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member.
+  modifiedTime:
+    $ref: modifiedTime.yaml
+  modifiedBy:
+    $ref: modifiedBy.yaml
+  createdTime:
+    $ref: createdTime.yaml
+  createdBy:
+    $ref: createdBy.yaml
+  links:
+    $ref: links.yaml

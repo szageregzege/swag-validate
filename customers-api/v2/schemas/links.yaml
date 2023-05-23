@@ -1,0 +1,27 @@
+description: |
+  Link relations to schemas and hypermedia links.
+type: array
+
+uniqueItems: true
+
+minItems: 0
+items:
+  type: object
+  
+  additionalProperties: false
+  properties:
+    rel:
+      description: |
+        Describes type of link.
+      type: string
+      
+      minLength: 1
+    href:
+      description: |
+        Link to resource of type described by rel.
+      type: string
+      
+      minLength: 1
+  required:
+    - rel
+    - href

@@ -1,0 +1,11 @@
+
+
+description: |
+  Specifies the sort order of the returned collection.
+in: query
+required: false
+name: sortBy
+schema:
+  type: string
+  
+  example: createdTime

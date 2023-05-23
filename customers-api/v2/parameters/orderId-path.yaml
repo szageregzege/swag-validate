@@ -1,0 +1,9 @@
+name: orderId
+description: |
+  Describe the parameter here.
+in: path
+required: true
+schema:
+  type: string
+  
+  example: 1992c0d8

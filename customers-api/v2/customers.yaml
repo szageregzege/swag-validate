@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: Customers
+  version: v1
+servers:
+  - url: https://{hostname}/commerce/v1
+paths:
+  /customers:
+    get:
+      operationId: get-customers
+      summary: List of customers
+      tags:
+        - Customers
+      description: |
+        Describe what the operation does here.
+      responses:
+        200:     
+          content:  
+            application/json:
+              example:
+                $ref: examples/customers.json
+              schema:
+                $ref: schemas/customers.yaml
+          description: |
+            The response provides the collection of `customers`.             
+        400:
+          $ref: errors/400.yaml
+       

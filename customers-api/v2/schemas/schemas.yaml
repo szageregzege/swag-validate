@@ -1,0 +1,11 @@
+
+description: |
+  Set of items (summarize).
+type: array
+
+uniqueItems: true
+minItems: 0
+items:
+  type: string
+  
+  minLength: 1

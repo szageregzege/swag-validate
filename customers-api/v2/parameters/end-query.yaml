@@ -1,0 +1,10 @@
+
+name: end
+in: query
+description: |
+  Describe the parameter here.
+required: false
+schema:
+  type: string
+  
+  example: "2021-03-01T00:00Z"

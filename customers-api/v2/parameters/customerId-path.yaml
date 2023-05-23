@@ -1,0 +1,9 @@
+name: customerId
+in: path
+required: true
+description: |
+  Describe the parameter here.
+schema:
+  type: string
+  
+  example: ef9a3122

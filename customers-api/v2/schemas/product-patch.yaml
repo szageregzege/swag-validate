@@ -1,0 +1,38 @@
+type: object
+
+additionalProperties: false
+
+
+minProperties: 1
+description: |
+  Summarize this object's scope & function.
+properties:
+  productName:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member.
+  productType:
+    type: string
+    
+    minLength: 1
+    description: |
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
+    enum:
+      
+      
+      
+      
+      
+      
+      - INTERNAL
+      - STANDARD
+      - SPECIAL
+      - ONLINE
+  productDescription:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member.

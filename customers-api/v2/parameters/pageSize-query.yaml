@@ -1,0 +1,16 @@
+
+
+description: |
+  Describe the parameter here, `100` by default.
+in: query
+required: false
+name: pageSize
+schema:
+  
+  default: 100
+  maximum: 1000
+  
+  minimum: 1
+  type: integer
+  
+  example: 50

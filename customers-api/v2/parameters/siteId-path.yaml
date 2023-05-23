@@ -1,0 +1,7 @@
+name: siteId
+in: path
+description: |
+  Uniquely identifies a site.
+required: true
+schema:
+  type: integer

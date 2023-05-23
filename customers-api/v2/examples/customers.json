@@ -1,0 +1,48 @@
+{
+  "customers": [
+    {
+      "customerId": "ef9a3122",
+      "customerName": "...actual non-placeholder data that represents actual, non-'test' usage...",
+      "customerDescription": "...actual non-placeholder data that represents actual, non-'test' usage...",
+      "customerStatus": "ACTIVE",
+      "customerType": "STANDARD",
+      "links": [
+        {
+          "href": "/commerce/v1/customers/ef9a3122",
+          "rel": "self"
+        },
+        {
+          "href": "/commerce/v1/customers/vskzsmv2/ef9a3122?page=1&pageSize=50",
+          "rel": "orders"
+        }
+      ]
+    },
+    {
+      "customerId": "vskzsmv2",
+      "customerName": "...actual non-placeholder data that represents actual, non-'test' usage...",
+      "customerDescription": "...actual non-placeholder data that represents actual, non-'test' usage...",
+      "customerStatus": "ACTIVE",
+      "customerType": "STANDARD",
+      "links": [
+        {
+          "href": "/commerce/v1/customers/vskzsmv2",
+          "rel": "self"
+        },
+        {
+          "href": "/commerce/v1/customers/vskzsmv2/orders?page=1&pageSize=50",
+          "rel": "orders"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "href": "/commerce/v1/customers?page=1&pageSize=3",
+      "rel": "first"
+    },
+    {
+      "href": "/commerce/v1/customers?page=2&pageSize=3",
+      "rel": "next"
+    }
+  ]
+}

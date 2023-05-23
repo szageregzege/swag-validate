@@ -1,0 +1,6 @@
+
+type: string
+minLength: 1
+description: |
+  Summarize.
+readOnly: true

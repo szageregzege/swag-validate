@@ -1,0 +1,65 @@
+type: object
+
+additionalProperties: false
+description: |
+  Summarize this object's scope & function.
+required:
+  - productId
+  - productName
+  - productType
+  - productStatus
+  - productDescription
+properties:
+  productId:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member.
+  productName:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member.
+  productType:
+    type: string
+    
+    minLength: 1
+    description: |
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
+    enum:
+      
+      
+      
+      
+      
+      
+      - INTERNAL
+      - STANDARD
+      - SPECIAL
+      - ONLINE
+  productStatus:
+    type: string
+    
+    minLength: 1
+    description: |
+      Description mentions each supported literal value such as `GA` or `BETA`, or else links to an [external table](ref:enum-tbl) whose doc serves out from 
+    
+    
+    enum:
+      $ref: enum-productStatus.yaml
+  productDescription:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member.
+  productGuid:
+    type: string
+    
+    minLength: 1
+    description: |
+      Describe this data member. Internal.
+  links:
+    $ref: links.yaml

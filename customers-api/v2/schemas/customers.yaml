@@ -1,0 +1,20 @@
+type: object
+additionalProperties: false
+description: |
+  Summarize this object's scope & function.
+required:
+  - customers
+properties:
+  customers:
+    type: array
+    
+    uniqueItems: true
+   
+    minItems: 0
+    description: |
+      List of customers.
+    items:
+      $ref: customer.yaml
+  links:
+    $ref: links.yaml
+    readOnly: true

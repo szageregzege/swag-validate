@@ -1,0 +1,15 @@
+
+
+description: |
+  Describe the parameter, `1` by default.
+in: query
+required: false
+name: page
+schema:
+  
+  default: 1
+  
+  minimum: 1
+  type: integer
+  
+  example: 10
