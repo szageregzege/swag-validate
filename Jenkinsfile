@@ -41,14 +41,17 @@ pipeline {
                         script: 'git diff --name-only HEAD~1..HEAD'
                     ).trim().split('\n')
 
-                    def nearestParentFolder = null
+                    def nearestParentFolder = ""
 
                     for (file in changedFiles) {
                         def parentFolderPattern = /^(.*?\/v[1-9]).*$/
                         def match = file =~ parentFolderPattern
                         if (match.find()) {
-                            nearestParentFolder = file ? match[0][1] : "reference-api/v1"
+                            nearestParentFolder = match[0][1]
                             break
+                        }
+                        else {
+                            nearestParentFolder = "reference-api/v1"
                         }
                     }
 
