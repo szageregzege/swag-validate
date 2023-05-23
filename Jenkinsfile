@@ -46,8 +46,8 @@ pipeline {
                     for (file in changedFiles) {
                         def parentFolderPattern = /^(.*?\/v[1-9]).*$/
                         def match = file =~ parentFolderPattern
-                        if (match) {
-                            nearestParentFolder = match ? match[0][1] : null
+                        if (match.find()) {
+                            nearestParentFolder = file ? match[0][1] : "reference-api/v1"
                             break
                         }
                     }
