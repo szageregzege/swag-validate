@@ -44,10 +44,10 @@ pipeline {
                     def nearestParentFolder = null
 
                     for (file in changedFiles) {
-                        def parentFolderPattern = /^(.*\/)?(v[1-9])$/
+                        def parentFolderPattern = /^(.*?\/v[1-9]).*$/
                         def match = file =~ parentFolderPattern
                         if (match) {
-                            nearestParentFolder = match ? match[0][2] : null
+                            nearestParentFolder = match ? match[0][1] : null
                             break
                         }
                     }
@@ -76,7 +76,7 @@ pipeline {
 
         stage('Check Blocking Errors') {
             steps {
-                dir('reference-api/v1') {
+                dir("${env.PARENT_FOLDER}") {
                     script {
                         def blockingContent = readFile 'blocking.txt'
                         if (blockingContent) {
