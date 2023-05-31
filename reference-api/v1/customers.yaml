@@ -5,7 +5,7 @@ info:
 servers:
   - url: https://{hostname}/commerce/v1
 paths:
-  /customers:
+  /company/customers:
     get:
       operationId: get-customers
       summary: List of customers

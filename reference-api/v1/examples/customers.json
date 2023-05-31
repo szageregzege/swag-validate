@@ -6,6 +6,7 @@
       "customerDescription": "...actual non-placeholder data that represents actual, non-'test' usage...",
       "customerStatus": "ACTIVE",
       "customerType": "STANDARD",
+      "contractId": "1-3CV387",
       "links": [
         {
           "href": "/commerce/v1/customers/ef9a3122",
@@ -22,6 +23,7 @@
       "customerName": "...actual non-placeholder data that represents actual, non-'test' usage...",
       "customerDescription": "...actual non-placeholder data that represents actual, non-'test' usage...",
       "customerStatus": "ACTIVE",
+      "contractId": "1-3CV387",
       "customerType": "STANDARD",
       "links": [
         {
