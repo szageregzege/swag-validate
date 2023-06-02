@@ -10,7 +10,7 @@ paths:
       operationId: get-customers
       summary: List of customers
       tags:
-        - Customer Types
+        - Customera
       description: |
         Describe what the operation does here.
       responses:
