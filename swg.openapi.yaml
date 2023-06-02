@@ -11,7 +11,7 @@ paths:
       operationId: get-products
       summary: List products
       tags:
-      - Product names
+      - Product
       description: |
         This operation returns a list of products, optionally paginated
         or filtered by type of product or date when first made available.
