@@ -9,7 +9,7 @@ paths:
   "/products":
     get:
       operationId: get-products
-      summary: List products
+      summary: List product
       tags:
       - Product
       description: |
